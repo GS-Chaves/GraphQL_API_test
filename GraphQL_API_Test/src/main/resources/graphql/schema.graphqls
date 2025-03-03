@@ -1,0 +1,19 @@
+type UserDTO{
+    id: ID
+    name: String!
+    email: String!
+    password: String!
+}
+
+type Query{
+    getUser(id: ID!): UserDTO
+    listUsers: [UserDTO!]!
+}
+
+type Mutation {
+    createUser(name: String!, email: String!, password: String!): UserDTO!
+}
+
+type Subscription{
+    userAdded: UserDTO!
+}
